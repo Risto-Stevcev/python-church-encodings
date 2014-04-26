@@ -10,6 +10,8 @@ The most interesting thing about this is that numbers aren't anything special in
 
 So far I've translated church booleans, church boolean operators, church conditionals, church comparison operators, church numerals (natural numbers), church arithmetic operators (for natural numbers), church lists, church integers, loops with the z-combinator, and church arithmetic operators (for integers) less the exponential and factorial operators. 
 
+**View the package on [PyPI](http://pypi.python.org/pypi/church_encoding/0.1)**
+
 
 ## Z Combinator
 
@@ -19,6 +21,44 @@ The Z combinator is used in place of the Y combinator in normal form progrmaming
 ## Conditionals
 
 The translation for some of the lambda functions involved using regular if/then statements instead of the **ifelse** lamdba function. I suspect that this might again be a limitation like the Z combinator, where the evaluation order plays a role in being able to use lambdas in the truest sense. There may be a workaround I'll find to get it to work some day.
+
+
+## Installation
+
+* Install using pip.  
+   ``pip install --user church_encodings``
+
+* Import the church module.  
+
+
+    python    
+    >>> import church_encoding.church as church
+
+
+* Play around with the functions.  
+   
+
+    >>> dir(church)  
+    >>> (church.unchurch_bool) ((church.AND) (church.true) (church.false))  
+    False  
+
+
+Here is a full list of the commands:  
+
+Boolean true/false: ``true``, ``false``, ``unchurch_bool``  
+Boolean operators: ``AND``, ``NOT``, ``OR``, ``XOR``  
+Z-combinator: ``Z``  
+Conditional: ``ifelse``  
+
+Natural numbers: ``zero``, ``one``, ``two``, ``three``, ``num``, ``unchurch_num``  
+Integers: ``convertNZ``, ``unchurch_int``  
+Comparison operators (natural numbers): ``eq``, ``geq``, ``gt``, ``leq``, ``lt``  
+Arithmetic operators (natural numbers): ``pred``, ``succ``, ``add``, ``sub``, ``mult``, ``div``, ``divnZ``, ``exp``, ``fac``, ``is_zero``  
+Arithmetic operators (integers): ``addZ``, ``subZ``, ``multZ``, ``divZ``, ``neg``, ``onezero``  
+Lists: ``car``, ``cdr``, ``cons``  
+
+
+For usage examples, see the [test suite](https://github.com/Risto-Stevcev/python-church-encodings/blob/master/church-encoding/test/church_test.py)
 
 
 ## Credits
