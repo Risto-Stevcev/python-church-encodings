@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='church_encoding',
-    version='0.1',
+    version='0.1.1',
     license='BSD',
     author='Risto Stevcev',
     author_email='risto1@gmail.com',
